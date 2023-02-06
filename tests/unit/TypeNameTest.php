@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace Phpolar\StorageDriver;
 
+use \DateTime;
+use \DateTimeImmutable;
+use \DateTimeInterface;
 use Generator;
 use PHPUnit\Framework\TestCase;
 
+
 /**
- * @covers \Phpolar\StorageDriver\TypeName
+ * @covers ::parseTypeName
  */
 final class TypeNameTest extends TestCase
 {
@@ -24,9 +28,9 @@ final class TypeNameTest extends TestCase
         yield ["bool", TypeName::T_Bool];
         yield ["boolean", TypeName::T_Bool];
         yield ["resource", TypeName::T_Resource];
-        yield ["DateTime", TypeName::T_DateTime];
-        yield ["DateTimeInterface", TypeName::T_DateTime];
-        yield ["DateTimeImmutable", TypeName::T_DateTime];
+        yield [DateTime::class, TypeName::T_DateTime];
+        yield [DateTimeInterface::class, TypeName::T_DateTime];
+        yield [DateTimeImmutable::class, TypeName::T_DateTime];
         yield ["x", TypeName::Invalid];
         yield ["resource (closed)", TypeName::Invalid];
         yield ["unknown type", TypeName::Invalid];
@@ -39,7 +43,7 @@ final class TypeNameTest extends TestCase
      */
     public function test1(string $givenStringTypeName, TypeName $expectedTypeName)
     {
-        $parsedTypeName = TypeName::parse($givenStringTypeName);
+        $parsedTypeName = parseTypeName($givenStringTypeName);
         $this->assertEquals($expectedTypeName, $parsedTypeName);
     }
 }
