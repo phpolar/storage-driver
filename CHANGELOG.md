@@ -1,3 +1,9 @@
+## 1.0.0 (2023-02-05)
+
+### Feat
+
+- use function to parse instead of static method
+
 ## 0.1.2 (2023-01-25)
 
 ### Fix
