@@ -10,7 +10,10 @@
     "autoload": {
         "psr-4": {
             "Phpolar\\StorageDriver\\": "src/"
-        }
+        },
+        "files": [
+            "src/Functions/parseTypeName.php"
+        ]
     },
     "authors": [
         {
