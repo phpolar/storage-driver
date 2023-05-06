@@ -30,6 +30,7 @@
         "test:unit": "@test --configuration=phpunit.dev.xml --testsuite unit",
         "test:coverage": "XDEBUG_MODE=coverage composer exec \"@test:unit --coverage-text\"",
         "ci:test": "XDEBUG_MODE=coverage composer exec \"@test --configuration=phpunit.ci.xml --coverage-clover=build/logs/clover.xml\"",
+        "ci:test-build": "composer exec \"@test --configuration=phpunit.ci.xml\"",
         "ci:generate-coverage-badge": "composer exec \"php-coveralls -v\""
     }
 }
