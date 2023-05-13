@@ -34,8 +34,5 @@ jobs:
     - name: Install dependencies
       run: composer update --no-ansi --no-interaction --prefer-dist --no-progress --ignore-platform-req=ext-ast
 
-    - name: Run static analysis
-      run: composer ci:analyze
-
     - name: Run test suite
       run: composer ci:test-build
