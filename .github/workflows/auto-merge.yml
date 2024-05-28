@@ -5,11 +5,13 @@ on:
     paths-ignore:
       - '**.php'
       - '**.yml'
+      - '**.yaml'
       - '**.md'
       - '**.svg'
       - '**.xml'
       - '.gitattributes'
       - '.gitignore'
+      - 'LICENSE'
 
 jobs:
   auto-merge:
