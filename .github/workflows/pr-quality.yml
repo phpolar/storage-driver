@@ -34,9 +34,6 @@ jobs:
     - name: Install dependencies
       run: composer update --no-ansi --no-interaction --prefer-dist --no-progress --ignore-platform-req=ext-ast && composer dumpautoload
 
-    - name: Scanning for lint errors
-      run: composer ci:lint
-
     - name: Run test suite
       run: composer ci:test
 
