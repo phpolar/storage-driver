@@ -8,15 +8,15 @@ use \DateTime;
 use \DateTimeImmutable;
 use \DateTimeInterface;
 use Generator;
+use PHPUnit\Framework\Attributes\CoversFunction;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 
-/**
- * @covers ::parseTypeName
- */
+#[CoversFunction('parseTypeName')]
 final class TypeNameTest extends TestCase
 {
-    public function typeNameCases(): Generator
+    public static function typeNameCases(): Generator
     {
         yield ["string", TypeName::T_String];
         yield ["int", TypeName::T_Int];
@@ -37,10 +37,7 @@ final class TypeNameTest extends TestCase
         yield ["array", TypeName::Invalid];
     }
 
-    /**
-     * @testdox Shall parse string type
-     * @dataProvider typeNameCases()
-     */
+    #[DataProvider('typeNameCases')]
     public function test1(string $givenStringTypeName, TypeName $expectedTypeName)
     {
         $parsedTypeName = parseTypeName($givenStringTypeName);
