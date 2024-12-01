@@ -4,7 +4,7 @@
     "description": "Provides an interface for database storage driver implementations.",
     "type": "library",
     "require": {
-        "php": ">=5.3.0"
+        "php": "^8.1"
     },
     "license": "MIT",
     "autoload": {
