@@ -7,6 +7,7 @@
 /.github                  export-ignore
 /.gitignore               export-ignore
 /.phan                    export-ignore
+/.vscode	          export-ignore
 /phpcs.xml                export-ignore
 /phpdoc.xml               export-ignore
 /phpolar.svg              export-ignore
