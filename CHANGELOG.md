@@ -1,3 +1,9 @@
+## 1.0.1 (2025-02-13)
+
+### Fix
+
+- remove configuration files from dist
+
 ## 1.0.0 (2023-02-05)
 
 ### Feat
